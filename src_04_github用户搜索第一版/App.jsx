@@ -22,12 +22,12 @@ class App extends React.Component {
       searchContent
     })
   }
- 
   render () {
     return (
       <div className="container">
         <Search getSearchContent={this.getSearchContent}/>
         <List searchContent={this.state.searchContent}/>
+        
       </div>
     )
   }

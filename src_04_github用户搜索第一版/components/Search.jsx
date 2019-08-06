@@ -1,5 +1,4 @@
 import React from 'react'
-import PubSub from 'pubsub-js'
 
 class Search extends React.Component {
   constructor(props) {
@@ -15,9 +14,8 @@ class Search extends React.Component {
       return;
     }
     // 2. 将数据传到App中
-    // this.props.getSearchContent(searchContent);
-    // 2. 发布消息
-    PubSub.publish('msg', searchContent);
+    this.props.getSearchContent(searchContent);
+    
     // 3. 清空搜索内容
     this.myRefs.current.value = '';
   }
