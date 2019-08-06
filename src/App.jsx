@@ -5,6 +5,9 @@ import List from './components/List'
 import './app.css'
 
 class App extends React.Component {
+  state = {
+    searchContent: ''
+  }
   constructor(props) {
     super(props);
   }
@@ -13,11 +16,17 @@ class App extends React.Component {
     
     
   }
+  
+  getSearchContent = (searchContent) => {
+    this.setState({
+      searchContent
+    })
+  }
   render () {
     return (
       <div className="container">
-        <Search />
-        <List />
+        <Search getSearchContent={this.getSearchContent}/>
+        <List searchContent={this.state.searchContent}/>
         
       </div>
     )
