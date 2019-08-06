@@ -1,4 +1,5 @@
 import React from 'react'
+import './item.css'
 
 export default class CommentItem extends React.Component {
   constructor(props){
