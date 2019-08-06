@@ -1,5 +1,8 @@
 import React from 'react'
-import axios from 'axios'
+import Search from './components/Search'
+import List from './components/List'
+
+import './app.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -7,29 +10,19 @@ class App extends React.Component {
   }
   
   componentDidMount() {
-    // 发送请求
-    let url = `https://api.github.com/search/repositories?q=r&sort=stars`
-    axios.get(url)
-      .then(function (response) {
-        // handle success
-        console.log(response.data.items);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      // .finally(function () {
-      //   // always executed
-      //   console.log('finally');
-      // });
+    
+    
   }
   render () {
     return (
-      <div>
-        <h1>App应用， 主组件</h1>
+      <div className="container">
+        <Search />
+        <List />
+        
       </div>
-    );
+    )
   }
+  
 }
 
 export default App;
