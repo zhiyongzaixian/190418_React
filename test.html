@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript" src="./test.js"></script>
+<script type="text/javascript">
+    // 1. 订阅事件
+    MyPubSub.subscribe('xxx', function (msg, data) {
+      console.log(msg, data);
+    })
+
+  // 2. 发布事件
+
+    MyPubSub.publish('xxx', '这是我发布的数据')
+</script>
+
+
+</body>
+</html>

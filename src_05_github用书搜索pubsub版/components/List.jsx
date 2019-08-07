@@ -2,6 +2,7 @@ import React from 'react'
 import Item from './Item/Item'
 import axios from  'axios'
 import PubSub from 'pubsub-js'
+import MyPubSub from './MyPubSub'
 
 class List extends React.Component {
   state = {
@@ -15,12 +16,44 @@ class List extends React.Component {
   }
   
   componentDidMount() {
-    // 1. 订阅消息
-    PubSub.subscribe('msg', async (msg, searchContent) => {
+      // 1. 订阅消息
+      console.log('订阅');
+      // PubSub.subscribe('msg', async (msg, searchContent) => {
+      //   console.log(msg, searchContent);
+      //   // 准备url
+      //   let url = `https://api.github.com/search/users?q=${searchContent}`;
+      //
+      //   // 发送请求获取对应的用户数据
+      //   // axios.get(url) // resolve(response);
+      //   //   .then((response) => {
+      //   //     console.log(response);
+      //   //   });
+      //   // 修改状态值： firstView ---> loading
+      //   this.setState({
+      //     firstView: false,
+      //     loading: true,
+      //     usersArr: []
+      //   })
+      //
+      //   try{
+      //     let result = await axios.get(url);
+      //     this.setState({
+      //       usersArr: result.data.items,
+      //       loading: false
+      //     })
+      //   }catch (error){
+      //     console.log(error);
+      //     this.setState({
+      //       error: error,
+      //       loading: false
+      //     })
+      //   }
+      // })
+      MyPubSub.subscribe('msg', async (msg, searchContent) => {
       console.log(msg, searchContent);
       // 准备url
       let url = `https://api.github.com/search/users?q=${searchContent}`;
-  
+    
       // 发送请求获取对应的用户数据
       // axios.get(url) // resolve(response);
       //   .then((response) => {
@@ -32,7 +65,7 @@ class List extends React.Component {
         loading: true,
         usersArr: []
       })
-  
+    
       try{
         let result = await axios.get(url);
         this.setState({
@@ -105,7 +138,7 @@ class List extends React.Component {
     }else if(error){
       return <p>暂时没有匹配到用户，请重新匹配</p>
     }else {
-      return '123'
+      return <h1>暂时没有匹配到用户，请重新匹配</h1>
     }
   }
 }
