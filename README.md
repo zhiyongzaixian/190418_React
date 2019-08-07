@@ -79,3 +79,9 @@
     1. 注册路由：<Route path='/home/news' render={() => <路由组件 key='我是通过props向路由组件传递的参数'/>}></Route>
     2. 请求路由： <Link to='路由路径'/>
     3. 组件内部获取参数数据： this.props.key = value;
+    
+    
+## React项目打包
+  1. npm run build
+  2. npm install serve -g
+  3. serve -s build ----> 在build文件夹的上一级目录
