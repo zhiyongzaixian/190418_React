@@ -41,8 +41,8 @@ class App extends React.Component {
                 {/*问题： Redirect能不能放在路由的上边*/}
                   {/*<Route exact path='/' component={Test}></Route>*/}
                 <Switch>
-                  <Route  path='/about' component={About}></Route>
-                  <Route  path='/home' component={Home}></Route>
+                  <Route path='/about' component={About}></Route>
+                  <Route path='/home' component={Home}></Route>
                   <Redirect from='/' to='/about'></Redirect>
                 </Switch>
               </div>

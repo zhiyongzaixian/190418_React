@@ -36,7 +36,7 @@
           - 事件名
           - 事件参数对象 === 标准事件的event对象
   
-## 路由
+## 路由: 
   1. 理解路由
       - 后端路由
           - 注册： 服务器端注册接口地址
@@ -50,9 +50,18 @@
     1. 路由器： 管理路由请求(路由地址)，分发路由
     2. 网线
     3. 发送请求
-  3. router路由
+  3. router路由 react-router-dom
     1. 路由器: 1)	<BrowserRouter>2)	<HashRouter>
-    2. 路由：3)	<Route>
-    3. 路由链接: <Link/> <NavLink/>
-    4. 路由性能优化： Switch ---> 主要匹配成功就停止匹配 
+    2. 路由：3)	<Route path='路由路径' component={路由组件}>
+        - 通过浏览器测试路由是否注册成功
+    3. 路由链接: <Link to='路由路径'/> <NavLink to='路由路径' activeClassName='路由地址生效后的动态class类，默认是active'/>
+    4. 路由性能优化： 
+        -  React路由中默认是模糊匹配，当有多个路由的时候会一次从上往下匹配，中间即使匹配成功，不会停止匹配，直到匹配所有的路由
+        -  Switch ---> 一旦匹配成功就停止匹配 
+        -  扩展： 数组性能好的方法： find, findIndex,性能不好的方法： forEach
+    5. 路由重定向： Redirect
+        -  <Redirect to='重定向之后的路由路径'>: 不配合Switch有强制性，每次都会重定向
+        -  通常会和Switch匹配使用
+        -  <Redirect from='重定向之前的路由路径' to='重定向之后的路由路径'>
+        -  Redirect路由组件不要放在路由的最前边，通常放在最后
     

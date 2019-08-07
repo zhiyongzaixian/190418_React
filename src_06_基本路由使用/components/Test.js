@@ -1,6 +1,6 @@
 import React from 'react'
 
-class About extends React.Component {
+class Test extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -8,14 +8,13 @@ class About extends React.Component {
   render () {
     return (
       <div>
-        <h1>About 组件内容</h1>
-        
+        <h1>Test 组件内容</h1>
       </div>
     );
   }
 }
-About.propTypes = {
+Test.propTypes = {
 
 };
 
-export default About;
+export default Test;

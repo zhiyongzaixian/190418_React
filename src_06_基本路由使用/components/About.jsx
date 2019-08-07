@@ -9,7 +9,6 @@ class About extends React.Component {
     return (
       <div>
         <h1>About 组件内容</h1>
-        
       </div>
     );
   }
