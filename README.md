@@ -53,5 +53,6 @@
   3. router路由
     1. 路由器: 1)	<BrowserRouter>2)	<HashRouter>
     2. 路由：3)	<Route>
-    3. 路由链接: <Link/> <NavLink/> 
+    3. 路由链接: <Link/> <NavLink/>
+    4. 路由性能优化： Switch ---> 主要匹配成功就停止匹配 
     

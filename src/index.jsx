@@ -5,7 +5,7 @@ import {BrowserRouter, HashRouter} from 'react-router-dom'
 import App from './App'
 // 渲染整个应用
 ReactDOM.render((
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
 ), document.getElementById('root'));
