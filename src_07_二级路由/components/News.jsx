@@ -12,7 +12,6 @@ class News extends React.Component {
     return (
       <div>
         News 组件内容
-        <p>{this.props.msg}</p>
         <ul>
           {
             this.state.newsArr.map((item,  index) => {

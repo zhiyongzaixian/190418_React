@@ -24,7 +24,7 @@ class Home extends React.Component {
             </li>
           </ul>
           <Switch>
-            <Route path='/home/news' render={() => <News msg='我是通过props向路由组件传递的参数'/>}></Route>
+            <Route path='/home/news' component={News}></Route>
             <Route path='/home/message' component={Message}></Route>
             <Redirect to='/home/news'></Redirect>
           </Switch>

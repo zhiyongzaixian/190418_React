@@ -64,4 +64,18 @@
         -  通常会和Switch匹配使用
         -  <Redirect from='重定向之前的路由路径' to='重定向之后的路由路径'>
         -  Redirect路由组件不要放在路由的最前边，通常放在最后
-    
+        
+## 在二级路由下刷新外部样式丢失(BrowserRouter)
+  1. 使用HashRouter
+  2. <link rel="stylesheet" href="%PUBLIC_URL%/bootstrap.css">
+  
+  
+## React如何向路由组件传参
+  1. params传参
+    1. 注册路由： <Route path='路由路径/:key' component={路由组件}>
+    2. 请求路由:  <Link to='路由路径/value'/>
+    3. 组件内部获取参数数据： this.props.match.params.key = value;
+  2. props传参
+    1. 注册路由：<Route path='/home/news' render={() => <路由组件 key='我是通过props向路由组件传递的参数'/>}></Route>
+    2. 请求路由： <Link to='路由路径'/>
+    3. 组件内部获取参数数据： this.props.key = value;
