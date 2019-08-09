@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import store from './redux/store'
 
-import App from './containers/App'
+import App from './App'
 // 渲染整个应用
 ReactDOM.render((
     <App store={store}/>

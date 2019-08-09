@@ -85,3 +85,24 @@
   1. npm run build
   2. npm install serve -g
   3. serve -s build ----> 在build文件夹的上一级目录
+  
+  
+## Redux
+  1. store
+      -  管理state
+      -  管理reducer
+  2. reducer
+      -  负责修改state状态值
+      -  数据源需要action提供
+  3. action
+      -  本质： {type: 修改state的方式， data: 参与修改state的数据}
+      -  定义： 函数， 目的是动态给action设置data
+  4. dispatch
+      -  作用： 分发action
+      -  到底做什么了： 
+          -  传递action对象
+          -  间接导致store去reducer调用
+  5. 获取state
+      -  store.getState();
+  6. 监听state变化
+      - store.subscribe(callback)
