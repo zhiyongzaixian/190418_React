@@ -1,34 +1,27 @@
-// 1. 定义reducers
-/*
-* 本质： 方法
-* 作用：
-*   1. 服务store对象, 为store对象提供初始化state状态值
-*   2. 帮助store对象修改state的状态值
-*   3. 数据源需要通过actions获取
-*   4. 修改完的数据交给store对象的state中
-*
-*   action = {data: 最新的数据， type: 修改数据的类型(如何修改数据)}
-* */
+import {ADDCOMMENT, DELCOMMENT} from './actions-type'
 
-// switch (匹配的条件){
-//   case 匹配的条件:
-//     执行语句
-//   case 匹配的条件:
-//     执行语句
-// }
+// 设置state的初始值
+let commentsList = [
+  {username: '山西人2', content: '我们有煤矿'},
+  {username: '雄安人2', content: '我在雄安有两亩地'}
+];
 
-function counterReducer(state=0, action) {
-  console.log('counterReducer()', state, action);
-  // 修改状态
+function commentsReducer(state=commentsList, action) {
   switch (action.type){
-    case 'increment':
-     // 原有的state数据  + action.data
-      return state + action.data;
-    case 'decrement':
-      return state - action.data;
+    case ADDCOMMENT:
+      // 在redux中不能直接修改原来的state
+      // state.unshift(action.data)
+      return [action.data, ...state];
+    case DELCOMMENT:
+      // action.data = index;
+      // state.splice(action.data, 1);
+      let newState = [...state];
+      newState.splice(action.data, 1);
+      return newState;
     default:
-      return state
+      return state;
   }
 }
 
-export default counterReducer;
+
+export default commentsReducer;

@@ -34,7 +34,8 @@ fn();
 var store = {
   counterReducer: counterReducer,
   state: null,
-  getState: getState
+  getState: getState,
+  dispatch: dispatch
 }
 // 初始化调用reducer获取初始化的state
 store.state = store.counterReducer(0, {type: 'init'})
@@ -64,7 +65,10 @@ function incrementAction(value) {
 
 function dispatch(actionObj) {
   // 分发action，大白话： 将获取的action交给reducer，前提是调用reducer
-  store.counterReducer(store.state, actionObj);
+  this.state = store.counterReducer(store.state, actionObj);
 }
 
-dispatch(incrementAction(123))
+// dispatch(incrementAction(123))
+
+
+export default store;

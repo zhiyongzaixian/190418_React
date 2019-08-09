@@ -1,12 +1,8 @@
-// actions: 提供最新的数据的，是store对象唯一的数据源
-/*
-* action本质： 对象
-* 定义的时候需要定义成方法
-*
-* */
+import {ADDCOMMENT, DELCOMMENT} from './actions-type'
+// 分析你的行为有哪些
 
-// 累加的action
-export const incrementAction = (number) => ({type: 'increment', data: number})
+// 添加: 往数组中添加一个对象
+export const addCommentAction = (commentObj) => ({type: ADDCOMMENT, data: commentObj})
 
-// 累减的action
-export const decrementAction = (number) => ({type: 'decrement', data: number})
+// 删除: index
+export const delCommentAction = (index) => ({type: DELCOMMENT, data: index})

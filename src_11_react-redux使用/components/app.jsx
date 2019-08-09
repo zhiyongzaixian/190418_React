@@ -25,6 +25,7 @@ class App extends React.Component {
     // })
     // 2.分发action
     this.props.incrementAction(value);
+    console.log(this.props.count);
   }
   
   
@@ -52,9 +53,13 @@ class App extends React.Component {
   }
   
   handleAsyncIncrement = () => {
-    setTimeout(() => {
-      this.increment();
-    }, 2000)
+    // this.increment();
+    // setTimeout(() => {
+    //   this.increment();
+    // }, 2000)
+    let value = this.refs.selectDOM.value*1;
+    this.props.asyncIncrementAction(value);
+    console.log(this.props.count);
   }
   render () {
     // 从redux的store对象中获取state的值
