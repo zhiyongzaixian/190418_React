@@ -87,14 +87,14 @@
   3. serve -s build ----> 在build文件夹的上一级目录
   
   
-## Redux
+## Redux: 集中管理状态数据，用于给多个组件进行共享
   1. store
       -  管理state, 唯一的数据源： action
       -  管理reducer
-  2. reducer
+  2. reducer： 提供，修改store中的state状态数据，修改的行为发生在reducer
       -  负责修改state状态值
       -  数据源需要action提供
-  3. action
+  3. action：是store对象数据的唯一来源
       -  本质： {type: 修改state的方式， data: 参与修改state的数据}
       -  定义： 函数， 目的是动态给action设置data
   4. dispatch
